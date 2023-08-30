@@ -1,8 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Section3 = () =>{
+const Section3 = ({scrollHeight}) =>{
+    const sectionStyle = () =>{
+        return{height:scrollHeight}
+    }
     return(
-        <section className="scroll-section" id="scroll-section-3">
+        <section className="scroll-section" id="scroll-section-3" style={sectionStyle()}>
             <p className="mid-message">
                 <strong>Retina 머그</strong><br/>
                 아이디어를 광활하게 펼칠<br/>
@@ -47,3 +51,7 @@ const Section3 = () =>{
 }
 
 export default React.memo(Section3);
+
+Section3.propTypes ={
+    scrollHeight:PropTypes.string.isRequired
+}

@@ -1,8 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Section2 = () =>{
+const Section2 = ({scrollHeight}) =>{
+    const sectionStyle = () => {
+        return {height: scrollHeight}
+    }
     return(
-        <section className="scroll-section" id="scroll-section-2">
+        <section className="scroll-section" id="scroll-section-2" style={sectionStyle()}>
             <div className="sticky-elem main-message a">
                 <p>
                     <small>편안한 촉감</small>
@@ -28,3 +32,7 @@ const Section2 = () =>{
 }
 
 export default React.memo(Section2)
+
+Section2.propTypes = {
+    scrollHeight:PropTypes.string.isRequired,
+}
